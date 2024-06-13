@@ -1,0 +1,19 @@
+{
+  "name": "wdfp-save-downloader",
+  "version": "1.0.0",
+  "description": "Download your saves from a certain mobile pinball game.",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx tsc & node out/server.js"
+  },
+  "author": "Duosion",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.27.0",
+    "msgpackr": "^1.10.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  }
+}
