@@ -8,7 +8,7 @@ A tool for making a copy of your pinball game save data.
   - Mitmproxy will act as an intermediary between the save downloader and the game client, allowing the save downloader to copy your save data.
 - Clone the repository from the command line.
   ```
-  git clone https://github.com/Duosion/starpoint.git
+  git clone https://github.com/Duosion/wdfp-save-downloader.git
   ```
   - If you do not have git installed, simply download the .zip for this repository by clicking the green "Code" button and then selecting "Download ZIP" from the dropdown.
 - Navigate to the directory where the repository was cloned/unzipped to.
@@ -30,7 +30,7 @@ A tool for making a copy of your pinball game save data.
 - To connect the Android device to the save downloader on your computer we will be using an app called [TunProxy](https://github.com/raise-isayan/TunProxy). 
   - If you do not want to use this app, there are other methods of connecting your Android device to your PC, such as your phone's built-in WiFi proxy settings.
 - Download and install the TunProxy APK to your Android device from [here](https://github.com/yogkin/HttpProxy/releases/tag/1.0.1).
-- Once installed, ensure that your Android device is connected to the same internet network as the computer running Starpoint.
+- Once installed, ensure that your Android device is connected to the same internet network as the computer running the save downloader.
 - Open the TunProxy app and input your computer's IP address along with ``:8080`` into the "Proxy address (ipv4:port) field". For example, my field would look like ``10.0.0.167:8080``
 - Press the "START" button and accept the VPN popup.
 - Open the pinball game on your Android device and log in as you normally would.
@@ -44,7 +44,7 @@ A tool for making a copy of your pinball game save data.
   ```
   .\mitmproxy -p 8080 -s "path/to/save_downloader/directory/mitm-redirect.py"
   ```
-    - **Note**: The ``path/to/save_downloader/directory`` portion of the below command should be replaced with the path to the directory where you installed Starpoint. Keep the ``/mitm-redirect.py`` portion.
+    - **Note**: The ``path/to/save_downloader/directory`` portion of the below command should be replaced with the path to the directory where you installed the save downloader. Keep the ``/mitm-redirect.py`` portion.
 - Navigate to the directory where you have the save downloader installed. 
 - Open a new terminal, and start the server.
   ```
