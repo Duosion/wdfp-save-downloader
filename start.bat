@@ -4,14 +4,10 @@ setlocal
 :: Get the directory path of the batch file
 set "BASEPATH=%~dp0"
 
+:: Start mitmproxy is installed in the install directory
+start cmd.exe /k "cd /d "%BASEPATH%" && .\mitmproxy.exe -s mitm-redirect.py -p 8080"
+
 :: Start the Server
 start cmd.exe /k "cd /d "%BASEPATH%" && .\wdfp-save-downloader.exe"
-
-:: Check if mitmproxy is installed in the install directory
-if exist "C:\Program Files\mitmproxy\bin\mitmproxy.exe" (
-    start cmd.exe /k "cd /d "%BASEPATH%" && "C:\Program Files\mitmproxy\bin\mitmproxy.exe" -s mitm-redirect.py -p 8080"
-) else (
-    start cmd.exe /k "cd /d "%BASEPATH%" && echo mitmproxy is not installed at 'C:\Program Files\mitmproxy'. Install from https://mitmproxy.org"
-)
 
 echo Starting both Node.js server and mitmweb...
