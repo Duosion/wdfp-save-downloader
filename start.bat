@@ -4,8 +4,8 @@ setlocal
 :: Get the directory path of the batch file
 set "BASEPATH=%~dp0"
 
-:: Start the Node.js project
-start cmd.exe /k "cd /d "%BASEPATH%" && npm install && npx tsc && npm run start"
+:: Start the Server
+start cmd.exe /k "cd /d "%BASEPATH%" && .\wdfp-save-downloader.exe"
 
 :: Check if mitmproxy is installed in the install directory
 if exist "C:\Program Files\mitmproxy\bin\mitmproxy.exe" (
