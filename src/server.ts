@@ -1,11 +1,18 @@
 import Fastify, { FastifyReply, FastifyRequest } from "fastify"
-import fs from "node:fs"
+import fs, { existsSync, mkdirSync } from "node:fs"
 import { unpack } from "msgpackr"
 
 // the port to listen from
 const listenPort = 8000
 const saveDirectory = process.cwd() + "/saves"
-console.log(saveDirectory)
+if (!existsSync(saveDirectory)) {
+    // make the data directory since it doesn't exist
+    try {
+        mkdirSync(saveDirectory)
+    } catch (error) {
+        throw new Error(`Failed to create the data directory. Reason: ${(error as Error).message}`)
+    }
+}
 
 // initialize server
 const fastify = Fastify({
