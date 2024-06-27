@@ -3,7 +3,7 @@ A tool to backup your pinball game save data.
 
 ## Installation & Setup
 1. Install [mitmproxy](https://mitmproxy.org) (follow their [installation instructions](https://docs.mitmproxy.org/stable/overview-installation/)).
-2. Download the release from the [releases page](/releases/latest)
+2. Download the release from the [releases page](https://github.com/Duosion/wdfp-save-downloader/releases/latest)
    - For non-Windows users or manual setup, see the **"Manual Start Method"** section.
 3. Extract the download.
 4. Run `start.bat` to launch the server and mitmproxy.
