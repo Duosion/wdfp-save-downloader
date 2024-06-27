@@ -11,6 +11,9 @@ API_SCHEME = 'http'
 hosts = {
     # na server
     "na.wdfp.kakaogames.com": True,
+    "kr.wdfp.kakaogames.com": True,
+    "eu.wdfp.kakaogames.com": True,
+    "sea.wdfp.kakaogames.com": True
 }
 
 def request(flow: http.HTTPFlow) -> None:

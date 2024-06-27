@@ -66,7 +66,12 @@ fastify.post("/latest/api/index.php/load", async (request: FastifyRequest, reply
 
     console.log("Received save data from official servers. Saving...")
     const bodyText = await serverResponse.text()
-    fs.writeFileSync(`${saveDirectory}/${playerId}.json`, JSON.stringify(unpack(Buffer.from(bodyText, "base64")), (_, value) => 
+    const unpacked = unpack(Buffer.from(bodyText, "base64"))
+
+    // remove sensitive information
+    unpacked["data_headers"] = {}
+    
+    fs.writeFileSync(`${saveDirectory}/${playerId}.json`, JSON.stringify(unpacked, (_, value) => 
         typeof value === 'bigint' ? value.toString() : value
     ))
     console.log(`Save data saved to ${saveDirectory}/${playerId}.json.`)
