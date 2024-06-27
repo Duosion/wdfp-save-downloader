@@ -4,7 +4,8 @@
   "description": "Download your saves from a certain mobile pinball game.",
   "main": "server.js",
   "scripts": {
-    "start": "npx tsc & node out/server.js"
+    "dev": "npx tsc & node out/server.js",
+    "build-windows": "npx tsc & if not exist \"target\" mkdir \"target\" & esbuild out/server.js --bundle --platform=node --outfile=target/server-bundle.js & node --experimental-sea-config sea-config.json & for %i in (node.exe) do copy \"%~$PATH:i\" \"target/wdfp-save-downloader.exe\" & npx postject \"target/wdfp-save-downloader.exe\" NODE_SEA_BLOB \"target/sea.blob\" --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 --macho-segment-name NODE_SEA"
   },
   "author": "Duosion",
   "license": "ISC",
@@ -14,6 +15,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "esbuild": "0.21.5",
+    "postject": "^1.0.0-alpha.6",
     "typescript": "^5.4.5"
   }
 }
