@@ -19,6 +19,7 @@ hosts = {
 def request(flow: http.HTTPFlow) -> None:
     redirect = hosts.get(flow.request.pretty_host)
     if redirect and flow.request.path == "/latest/api/index.php/load":
+        flow.request.headers.add("original-host", flow.request.pretty_host)
         flow.request.host = API_HOST
         flow.request.port = API_PORT
         flow.request.scheme = API_SCHEME
