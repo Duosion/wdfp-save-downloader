@@ -35,9 +35,10 @@ fastify.post("/latest/api/index.php/load", async (request: FastifyRequest, reply
     const headers = request.headers
 
     const playerId = headers['kakao_pid'] as string
+    const originalHost = headers['original-host'] as string ?? "na.wdfp.kakaogames.com"
 
     console.log("Loading save data from official servers...")
-    const serverResponse = await fetch("https://na.wdfp.kakaogames.com/latest/api/index.php/load", {
+    const serverResponse = await fetch(`https://${originalHost}/latest/api/index.php/load`, {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -55,7 +56,8 @@ fastify.post("/latest/api/index.php/load", async (request: FastifyRequest, reply
         },
         body: request.body as string
     }).catch(err => {
-            console.log(`Error when communication with official server: ${err}`)
+            console.log(`Error when communication with official server.`)
+            console.error(err)
             return null
         })
 
