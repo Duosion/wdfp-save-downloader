@@ -1,4 +1,4 @@
-**| English | [한국인](README_kr.md) |**
+**| :us: English | :kr: [한국인](README_kr.md) |**
 # WDFP Save Downloader
 A tool to backup your pinball game save data.
 
