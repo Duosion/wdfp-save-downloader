@@ -1,3 +1,4 @@
+** | English | [한국인](README_kr.md) | **
 # WDFP Save Downloader
 A tool to backup your pinball game save data.
 
@@ -50,15 +51,16 @@ Credit to [trickster.dev](https://www.trickster.dev/post/setting-up-mitmproxy-wi
 
 1. Open the settings app.
 2. Press the Wi-Fi button.
-3. Scroll to the bottom of the sub-menu and press the "Configure Proxy" button.
-4. Select the "Manual" option.
-5. In the "Server" field, enter you computer's IP address. (e.g., `10.0.0.167`)
-6. In the "Port" field, enter `8080`
-7. Press the "Save" button at the top of the screen.
-8. Open the pinball game and log in.
-9. If prompted, click "Trust for this session" for the mitmproxy certificate.
-10. Your save should now be in the `/saves` directory of the save downloader.
-11. Close the app and disable the proxy.
+3. Tap the (i) for your current Wi-Fi connection.
+4. Scroll to the bottom of the sub-menu and press the "Configure Proxy" button.
+5. Select the "Manual" option.
+6. In the "Server" field, enter you computer's IP address. (e.g., `10.0.0.167`)
+7. In the "Port" field, enter `8080`
+8. Press the "Save" button at the top of the screen.
+9. Open the pinball game and log in.
+10. If prompted, click "Trust for this session" for the mitmproxy certificate.
+11. Your save should now be in the `/saves` directory of the save downloader.
+12. Close the app and disable the proxy.
     1. Follow steps 1-3.
     2. Select the "Off" option.
 
