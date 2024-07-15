@@ -1,4 +1,4 @@
-** | [English](README.md) | 한국인 | **
+**| [English](README.md) | 한국인 |**
 # WDFP 세이브 다운로더
 핀볼 게임 세이브 데이터를 백업하기 위한 도구입니다.
 
