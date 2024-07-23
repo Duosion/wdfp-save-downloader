@@ -6,45 +6,29 @@ A tool to backup your pinball game save data.
 1. Download the release from the [releases page](https://github.com/Duosion/wdfp-save-downloader/releases/latest)
    - For non-Windows users or manual setup, see the **"Manual Start Method"** section.
 2. Extract the download.
-3. Run `start.bat` to launch the server and mitmproxy.
+3. Run `start.bat` (``start-ios.bat`` if you play on an iPhone).
    - **If you receive a Windows firewall popup, hit "Allow".**
-   - This will allow your Android device/emulator to connect to your computer later.
+4. A new tab will open in your web browser. Keep this open for later.
 
 ## Downloading Your Save File
 To download your save file, you will connect your Android device or emulator to the server running on your computer.
 
-### Find Your Local IP Address (Windows)
-1. On your keyboard press the Windows key + X.
-2. Select ``Terminal``.
-2. In the window that just opened, type the following:
-   ```
-   ipconfig
-   ```
-3. Locate your WiFi adapter's "IPv4 Address" under the "Wireless LAN adapter Wi-Fi:" section (e.g., `10.0.0.167`).
-   - The section will typically look like the following. Notice the "IPv4 Address. . ." entry.
-     ```
-     Wireless LAN adapter Wi-Fi:
-    
-     Connection-specific DNS Suffix  . : <Excluded>
-     IPv6 Address. . . . . . . . . . . : <Excluded>
-     IPv6 Address. . . . . . . . . . . : <Excluded>
-     Temporary IPv6 Address. . . . . . : <Excluded>
-     Link-local IPv6 Address . . . . . : <Excluded>
-     IPv4 Address. . . . . . . . . . . : 10.0.0.167
-     Subnet Mask . . . . . . . . . . . : 255.255.255.0
-     Default Gateway . . . . . . . . . : <Excluded>
-                                         10.0.0.1
-     ```
-
 ### Android/Emulator Setup
-1. Install [TunProxy](https://github.com/yogkin/HttpProxy/releases/tag/1.0.1) on your Android device.
+1. Install the WG tunnel app from the [Google Play Store](https://play.google.com/store/apps/details?id=com.zaneschepke.wireguardautotunnel) or [Github](https://github.com/zaneschepke/wgtunnel/releases/tag/3.4.7)
 2. Ensure your Android device is on the same network as your computer.
-3. Open TunProxy and enter your computer's IP address with `:8080` (e.g., `10.0.0.167:8080`).
-4. Tap "START" and accept the VPN popup.
-5. Open the pinball game and log in.
-6. If prompted, click "Trust for this session" for the mitmproxy certificate.
-7. Your save should now be in the `/saves` directory of the save downloader.
-8. You can now close the app, stop the server, and uninstall TunProxy.
+3. Open the WG tunnel app.
+4. Tap the "+" button in the bottom right corner of the screen.
+5. Tap "WireGuard"
+6. Tap "Add from QR code"
+7. Scan the QR code that is visible in the tab that opened up in your browser.
+8. At the top of the screen, there will be some numbers; i.e. 10.0.0.167.
+9. Tap the round button to the right of these numbers.
+10. Accept the VPN popup.
+11. Tap the round button to the right of these numbers again.
+12. Open the pinball game and log in.
+13. If prompted, click "Trust for this session".
+14. Your save should now be in the `/saves` directory of the save downloader.
+15. You can now close the app, stop the server, and uninstall TunProxy.
 
 ### iOS Setup
 Credit to [trickster.dev](https://www.trickster.dev/post/setting-up-mitmproxy-with-ios17.1/) for these instructions.
@@ -58,7 +42,7 @@ Credit to [trickster.dev](https://www.trickster.dev/post/setting-up-mitmproxy-wi
 7. In the "Port" field, enter `8080`
 8. Press the "Save" button at the top of the screen.
 9. Open the pinball game and log in.
-10. If prompted, click "Trust for this session" for the mitmproxy certificate.
+10. If prompted, click "Trust for this session".
 11. Your save should now be in the `/saves` directory of the save downloader.
 12. Close the app and disable the proxy.
     1. Follow steps 1-3.
