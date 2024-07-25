@@ -2,6 +2,9 @@
 # WDFP Save Downloader
 A tool to backup your pinball game save data.
 
+> [!WARNING]
+> As of July 25th, 2024. This tool no longer works due to the closure of the pinball game's servers.
+
 ## Installation & Setup
 1. Download the release from the [releases page](https://github.com/Duosion/wdfp-save-downloader/releases/latest)
    - For non-Windows users or manual setup, see the **"Manual Start Method"** section.
